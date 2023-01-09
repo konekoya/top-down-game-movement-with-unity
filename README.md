@@ -2,7 +2,7 @@
 
 ### What is this?
 
-This is a quick prototype of using a same sprite asset to create a simple 2D top down movement with Unity.
+This is a quick experiment of using a same sprite asset to create a simple 2D top down movement with Unity.
 
 ### Why?
 

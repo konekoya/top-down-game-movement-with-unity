@@ -20,8 +20,8 @@ public class Player : MonoBehaviour
     // Movement animations
     const string PLAYER_MOVE_LEFT = "Player_Move_Left";
     const string PLAYER_MOVE_RIGHT = "Player_Move_Right";
-    const string PLAYER_MOVE_UP = "Player_Move_Up";
-    const string PLAYER_MOVE_DOWN = "Player_Move_Down";
+    const string PLAYER_MOVE_BACK = "Player_Move_Back";
+    const string PLAYER_MOVE_FRONT = "Player_Move_Front";
 
     // Idle animations
     const string PLAYER_IDLE_LEFT = "Player_Idle_Left";
@@ -63,11 +63,11 @@ public class Player : MonoBehaviour
             }
             else if (inputVertical > 0)
             {
-                ChangeAnimationState(PLAYER_MOVE_UP);
+                ChangeAnimationState(PLAYER_MOVE_BACK);
             }
             else if (inputVertical < 0)
             {
-                ChangeAnimationState(PLAYER_MOVE_DOWN);
+                ChangeAnimationState(PLAYER_MOVE_FRONT);
             }
         }
         else
