@@ -26,3 +26,7 @@ I basically followed [this](https://www.youtube.com/watch?v=_ijgw2i0mmi&ab_chann
 ### The result
 
 Okay, personally, I like the idea of doing everything in code when possible instead of UI. This probably has something to do with my previous experience with Xcode and iOS development. But when working with the Blend Tree, you have the advantage of preview your animation transition in Unity Editor, and hide all the complexity of state changing with the UI. While with code, you won't be able to preview the animation and probably need to repeat tweak, compile and preview in the game window back and forth. You will have the complete control over the transition which is easily to maintain and can be reviewed in your version control tool like Git.
+
+### Updates
+
+- Added another project that has an NPC follows the waypoints
