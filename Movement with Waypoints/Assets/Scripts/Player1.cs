@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player1 : MonoBehaviour
 {
     [SerializeField] float walkSpeed = 4f;
 
@@ -55,19 +55,19 @@ public class Player : MonoBehaviour
     {
         if (direction.x > 0)
         {
-            ChangeAnimationState(PlayerState.MoveRight);
+            ChangeAnimationState(Player1State.MoveRight);
         }
         else if (direction.x < 0)
         {
-            ChangeAnimationState(PlayerState.MoveLeft);
+            ChangeAnimationState(Player1State.MoveLeft);
         }
         else if (direction.y > 0)
         {
-            ChangeAnimationState(PlayerState.MoveBack);
+            ChangeAnimationState(Player1State.MoveBack);
         }
         else if (direction.y < 0)
         {
-            ChangeAnimationState(PlayerState.MoveFront);
+            ChangeAnimationState(Player1State.MoveFront);
         }
     }
 
@@ -75,31 +75,31 @@ public class Player : MonoBehaviour
     {
         if (direction.x > 0)
         {
-            ChangeAnimationState(PlayerState.IdleRight);
+            ChangeAnimationState(Player1State.IdleRight);
         }
         else if (direction.x < 0)
         {
-            ChangeAnimationState(PlayerState.IdleLeft);
+            ChangeAnimationState(Player1State.IdleLeft);
         }
         else if (direction.y > 0)
         {
-            ChangeAnimationState(PlayerState.IdleBack);
+            ChangeAnimationState(Player1State.IdleBack);
         }
         else if (direction.y < 0)
         {
-            ChangeAnimationState(PlayerState.IdleFront);
+            ChangeAnimationState(Player1State.IdleFront);
         }
     }
 }
 
-public static class PlayerState
+public static class Player1State
 {
-    public const string MoveLeft = "Player_Move_Left";
-    public const string MoveRight = "Player_Move_Right";
-    public const string MoveBack = "Player_Move_Back";
-    public const string MoveFront = "Player_Move_Front";
-    public const string IdleLeft = "Player_Idle_Left";
-    public const string IdleRight = "Player_Idle_Right";
-    public const string IdleBack = "Player_Idle_Back";
-    public const string IdleFront = "Player_Idle_Front";
+    public const string MoveLeft = "Player1_Move_Left";
+    public const string MoveRight = "Player1_Move_Right";
+    public const string MoveBack = "Player1_Move_Back";
+    public const string MoveFront = "Player1_Move_Front";
+    public const string IdleLeft = "Player1_Idle_Left";
+    public const string IdleRight = "Player1_Idle_Right";
+    public const string IdleBack = "Player1_Idle_Back";
+    public const string IdleFront = "Player1_Idle_Front";
 }
