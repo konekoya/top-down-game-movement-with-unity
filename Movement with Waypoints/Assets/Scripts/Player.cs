@@ -1,21 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+
+[Serializable]
+public class KeyValuePair
+{
+    public string key;
+    public string val;
+}
 
 public class Player : MonoBehaviour
 {
     [SerializeField] float walkSpeed = 4f;
+    [SerializeField] Waypoints wPoints;
+
+    public List<KeyValuePair> stateList = new List<KeyValuePair>();
+    private Dictionary<string, string> playerState = new Dictionary<string, string>();
 
     private Animator animator;
     private string currentState;
 
     // Waypoints
-    private Waypoints wPoints;
     private int waypointIndex;
     private Vector2 lastDirection;
 
     private void Awake()
     {
-        wPoints = FindObjectOfType<Waypoints>();
         animator = gameObject.GetComponent<Animator>();
+        MapListToDict(stateList);
     }
 
     private void FixedUpdate()
@@ -51,23 +64,31 @@ public class Player : MonoBehaviour
         currentState = newState;
     }
 
+    private void MapListToDict(List<KeyValuePair> state)
+    {
+        foreach (var kvp in stateList)
+        {
+            playerState[kvp.key] = kvp.val;
+        }
+    }
+
     private void UpdateMovingDirection(Vector2 direction)
     {
         if (direction.x > 0)
         {
-            ChangeAnimationState(PlayerState.MoveRight);
+            ChangeAnimationState(playerState["Move_Right"]);
         }
         else if (direction.x < 0)
         {
-            ChangeAnimationState(PlayerState.MoveLeft);
+            ChangeAnimationState(playerState["Move_Left"]);
         }
         else if (direction.y > 0)
         {
-            ChangeAnimationState(PlayerState.MoveBack);
+            ChangeAnimationState(playerState["Move_Back"]);
         }
         else if (direction.y < 0)
         {
-            ChangeAnimationState(PlayerState.MoveFront);
+            ChangeAnimationState(playerState["Move_Front"]);
         }
     }
 
@@ -75,31 +96,19 @@ public class Player : MonoBehaviour
     {
         if (direction.x > 0)
         {
-            ChangeAnimationState(PlayerState.IdleRight);
+            ChangeAnimationState(playerState["Idle_Right"]);
         }
         else if (direction.x < 0)
         {
-            ChangeAnimationState(PlayerState.IdleLeft);
+            ChangeAnimationState(playerState["Idle_Left"]);
         }
         else if (direction.y > 0)
         {
-            ChangeAnimationState(PlayerState.IdleBack);
+            ChangeAnimationState(playerState["Idle_Back"]);
         }
         else if (direction.y < 0)
         {
-            ChangeAnimationState(PlayerState.IdleFront);
+            ChangeAnimationState(playerState["Idle_Front"]);
         }
     }
-}
-
-public static class PlayerState
-{
-    public const string MoveLeft = "Player_Move_Left";
-    public const string MoveRight = "Player_Move_Right";
-    public const string MoveBack = "Player_Move_Back";
-    public const string MoveFront = "Player_Move_Front";
-    public const string IdleLeft = "Player_Idle_Left";
-    public const string IdleRight = "Player_Idle_Right";
-    public const string IdleBack = "Player_Idle_Back";
-    public const string IdleFront = "Player_Idle_Front";
 }

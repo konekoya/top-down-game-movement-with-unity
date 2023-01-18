@@ -16,7 +16,7 @@ Open your UnityHub and load the project from your cloned repo, and open either `
 
 ### The tutorials
 
-I basically followed [this](https://www.youtube.com/watch?v=_ijgw2i0mmi&ab_channel=danikrossing) YouTube tutorial for player movement only thur code and [this one](https://www.youtube.com/watch?v=fRpoE4FfJf8&ab_channel=JTAGames) for using Blend Trees.
+I basically followed [this](https://www.youtube.com/watch?v=_iJgw2I0MmI&ab_channel=DaniKrossing) YouTube tutorial for player movement only thur code and [this one](https://www.youtube.com/watch?v=fRpoE4FfJf8&ab_channel=JTAGames) for using Blend Trees.
 
 1. There are more tutorials like this available on YT. You can find out more [here](https://github.com/konekoya/game-dev-links#2d-movement-and-animation)
 2. The asset I used in both tutorial is a free asset and is available [here](https://limezu.itch.io/moderninteriors). But you probably won't need to download that as the asset is already imported in the Unity editor

@@ -49,6 +49,8 @@ public class Player : MonoBehaviour
     {
         if (inputHorizontal != 0 || inputVertical != 0)
         {
+            if (inputHorizontal != 0 && inputVertical != 0) return;
+
             rb.velocity = new Vector2(inputHorizontal, inputVertical).normalized * walkSpeed;
             lastInputHorizontal = inputHorizontal;
             lastInputVertical = inputVertical;
